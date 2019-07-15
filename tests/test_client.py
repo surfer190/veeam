@@ -1,11 +1,12 @@
 from unittest import TestCase
 from unittest.mock import patch
 
+import requests
 import responses
 from freezegun import freeze_time
 
 from veeam.client import VeeamClient
-from veeam.errors import LoginFailError
+from veeam.errors import LoginFailError, LoginFailSessionKeyError
 
 REPO_SUMMARY_RESPONSE = {
     "Periods": [
@@ -502,3 +503,49 @@ class VeeamClientTestCase(TestCase):
             repos[0]['message_type'],
             'job'
         )
+
+    @responses.activate
+    def test_provide_own_session(self):
+        '''
+        Ensure a session can be provided in keyword arguments
+        '''
+        responses.add(
+            responses.POST,
+            f'{ self.BASE_API_URL }/sessionMngr/?v=v1_4',
+            json={'UserName': 'VEEAM\\veeam.api', 'SessionId': '2fb28f4f-46bd-4855-a757-0b8c24f9826b'},
+            status=201,
+            headers={'X-RestSvcSessionId': 'MMM'}
+        )
+        
+        token = '12345'
+        session = requests.Session()
+        session.headers.update({'my_token': token})
+        session.verify = False
+        
+        veeam_client = VeeamClient(self.BASE_API_URL, 'username', 'password', session=session)
+        
+        self.assertEqual(
+            veeam_client.session.headers['my_token'],
+            token
+        )
+        self.assertFalse(veeam_client.session.verify)
+
+    @responses.activate
+    def test_no_session_token_response(self):
+        '''
+        Ensure no session token response raises an error
+        '''
+        responses.add(
+            responses.POST,
+            f'{ self.BASE_API_URL }/sessionMngr/?v=v1_4',
+            json={},
+            status=201
+        )
+        
+        token = '12345'
+        session = requests.Session()
+        session.headers.update({'my_token': token})
+        session.verify = False
+        
+        with self.assertRaises(LoginFailSessionKeyError):
+            veeam_client = VeeamClient(self.BASE_API_URL, 'username', 'password', session=session)

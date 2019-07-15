@@ -3,7 +3,7 @@ import datetime
 import requests
 from requests.auth import HTTPBasicAuth
 
-from .errors import LoginFailError
+from .errors import LoginFailError, LoginFailSessionKeyError
 
 
 class VeeamClient(object):
@@ -18,11 +18,12 @@ class VeeamClient(object):
         2. Authenticate with the Veeam API
         '''
         if not session:
-            self.session = requests.Session()
+            session = requests.Session()
         
         self.url = url
         self.login_url = '{}/sessionMngr/?v=v1_4'.format(url)
         self.verify = verify
+        self.session = session
 
         auth = HTTPBasicAuth(veeam_username, veeam_password)
 
@@ -35,7 +36,10 @@ class VeeamClient(object):
         )
         
         if login.status_code  == 201:
-            session_token = login.headers['X-RestSvcSessionId']
+            try:
+                session_token = login.headers['X-RestSvcSessionId']
+            except KeyError:
+                raise LoginFailSessionKeyError()
         else:
             raise LoginFailError('Authentication failed')
 
