@@ -12,20 +12,25 @@ class VeeamClient(object):
     https://helpcenter.veeam.com/backup/rest/overview.html
     '''
     
-    def __init__(self, url, veeam_username, veeam_password, verify=False, v_token=None):
+    def __init__(self, url, veeam_username, veeam_password, verify=False, session=None):
+        '''
+        1. Create or use the existing session
+        2. Authenticate with the Veeam API
+        '''
+        if not session:
+            session = requests.Session()
+        
         self.url = url
         self.login_url = '{}/sessionMngr/?v=v1_4'.format(url)
         self.verify = verify
 
         auth = HTTPBasicAuth(veeam_username, veeam_password)
 
-        login = requests.post(
+        self.session.headers.update({'Accept': 'application/json'})
+
+        login = self.session.post(
             self.login_url,
-            auth=auth,
-            headers={
-                'Accept': 'application/json',
-                'v_token': v_token
-            },
+            auth=auth,,
             verify=verify
         )
         
@@ -34,16 +39,13 @@ class VeeamClient(object):
         else:
             raise LoginFailError('Authentication failed')
 
-        session = requests.Session()
-        session.headers.update(
+        self.session.headers.update(
             {
                 'X-RestSvcSessionId': session_token,
-                'Accept': 'application/json',
-                'v_token': v_token
+                'Accept': 'application/json'
             }
         )
-        session.verify = verify
-        self.session = session
+        self.session.verify = verify
 
     def get_repo_summary(self):
         '''
@@ -52,7 +54,7 @@ class VeeamClient(object):
         repos = self.session.get('{}/reports/summary/repository'.format(self.url))
         repositories = repos.json()
         return repositories
-    
+
     def get_jobs(self):
         '''
         Get all jobs
