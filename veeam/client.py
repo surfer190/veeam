@@ -18,7 +18,7 @@ class VeeamClient(object):
         2. Authenticate with the Veeam API
         '''
         if not session:
-            session = requests.Session()
+            self.session = requests.Session()
         
         self.url = url
         self.login_url = '{}/sessionMngr/?v=v1_4'.format(url)
@@ -30,7 +30,7 @@ class VeeamClient(object):
 
         login = self.session.post(
             self.login_url,
-            auth=auth,,
+            auth=auth,
             verify=verify
         )
         
