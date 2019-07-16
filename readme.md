@@ -14,6 +14,10 @@ Veeam Rest API Client or wrapper to make it easier to interact with the Veeam AP
     
     client = VeeamClient()
 
+## Running Tests
+
+    pytest
+
 ## Contributing
 
 ...
