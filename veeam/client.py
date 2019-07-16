@@ -65,6 +65,81 @@ class VeeamClient(object):
         '''
         jobs = self.session.get('{}/jobs'.format(self.url))
         return jobs.json()
+    
+    def get_backups(self):
+        '''
+        Get backups created on or imported to Veeam backup servers
+        '''
+        backups = self.session.get('{}/backups'.format(self.url))
+        return backups.json()
+    
+    def get_backup(self, uuid):
+        '''
+        Get a single backup info
+        
+        Arguments:
+            uuid {uuid}
+        
+        Returns:
+            json (python dict) -- single backup info
+        '''
+        backup = self.session.get('{url}/backups/{uuid}?format=Entity'.format(
+            url=self.url,
+            uuid=uuid
+        ))
+        return backup.json()
+    
+    def get_restore_points(self, backup_uuid):
+        restore_points = self.session.get('{url}/backups/{uuid}/restorePoints'.format(
+            url=self.url,
+            uuid=backup_uuid
+        ))
+        return restore_points.json()
+    
+    def get_vm_restore_points(self, restore_point_uuid):
+        vm_restore_points = self.session.get('{url}/restorePoints/{uuid}/vmRestorePoints'.format(
+            url=self.url,
+            uuid=restore_point_uuid
+        ))
+        return vm_restore_points.json()
+
+    def get_vms_processed_day(self):
+        '''
+        Return the number of vms process per day
+        '''
+        summary_vms = self.session.get(
+            '{url}/reports/summary/processed_vms'.format(
+                url=self.url
+            )
+        )
+        return summary_vms.json()
+
+    def get_summary_job_stats(self):
+        '''
+        Return the summary job stats
+        '''
+        summary_job_stats = self.session.get(
+            '{url}/reports/summary/job_statistics'.format(url=self.url)
+        )
+        return summary_job_stats.json()
+
+    def get_summary_vms(self):
+        '''
+        Return the summary vm stats
+        '''
+        summary_vm_stats = self.session.get(
+            '{url}/reports/summary/vms_overview'.format(url=self.url)
+        )
+        return summary_vm_stats.json()
+
+    def get_summary_overview(self):
+        '''
+        Return the summary overview stats
+        '''
+        summary_overview_stats = self.session.get(
+            '{url}/reports/summary/overview'.format(url=self.url)
+        )
+        return summary_overview_stats.json()
 
     def get_date_yesterday(self):
         '''

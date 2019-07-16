@@ -5,7 +5,7 @@ with open('readme.md') as f:
 
 setuptools.setup(
     name='veeam',
-    version='0.1.0',
+    version='0.1.1',
     description='Veeam backup API CLient',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -22,7 +22,6 @@ setuptools.setup(
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
         'Programming Language :: Python :: 3 :: Only',
-        'Topic :: Multimedia :: Graphics :: Capture :: Digital Camera',
         'License :: OSI Approved :: GNU General Public License v3 (GPLv3)',
         'Natural Language :: English'
     ]
