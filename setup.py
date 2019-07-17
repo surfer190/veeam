@@ -5,8 +5,8 @@ with open('readme.md') as f:
 
 setuptools.setup(
     name='veeam',
-    version='0.1.1',
-    description='Veeam backup API CLient',
+    version='0.1.2',
+    description='Veeam backup API Client',
     long_description=long_description,
     long_description_content_type='text/markdown',
     packages=setuptools.find_packages(exclude=['requirements', 'tests', ]),

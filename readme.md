@@ -34,6 +34,8 @@ Veeam Rest API Client or wrapper to make it easier to interact with the Veeam AP
 
 ## Uploading to Pypi
 
+Make sure to bump the version in `setup.py`
+
 Create the `dist` and `build` folders
 
     python setup.py sdist bdist_wheel
@@ -41,6 +43,10 @@ Create the `dist` and `build` folders
 Upload to test pypi
 
     twine upload --repository testpypi dist/*
+
+Upload to real pypi
+
+    twine upload --repository pypi dist/*
 
 ## Testing the Library
 
