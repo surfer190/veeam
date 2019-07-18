@@ -65,7 +65,23 @@ class VeeamClient(object):
         '''
         jobs = self.session.get('{}/jobs'.format(self.url))
         return jobs.json()
-    
+
+    def get_job(self, uuid):
+        '''
+        Get a single backup job
+        
+        Arguments:
+            uuid {[uuid}
+        
+        Returns:
+            json -- a python dict of the response
+        '''
+        job = self.session.get('{url}/job/{uuid}?format=Entity'.format(
+            url=self.url,
+            uuid=uuid
+        ))
+        return job.json()
+
     def get_backups(self):
         '''
         Get backups created on or imported to Veeam backup servers

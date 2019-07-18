@@ -40,14 +40,14 @@ FAILED_JOBS_RESPONSE = {
                 {
                     "IsRetry": False,
                     "JobUid": "urn:veeam:Job:dec7aae1-2124-43dc-a599-d6da0d724201",
-                    "JobName": "Vrfpoller Servers ECS_Ter",
+                    "JobName": "POL Servers ECS_Ter",
                     "JobType": "Backup",
                     "CreationTimeUTC": "2019-07-01T04:00:16Z",
                     "EndTimeUTC": "2019-07-01T06:26:56Z",
                     "State": "Stopped",
                     "Result": "Failed",
                     "Progress": 100,
-                    "Name": "Vrfpoller Servers ECS_Ter@2019-07-01 04:00:16",
+                    "Name": "POL Servers ECS_Ter@2019-07-01 04:00:16",
                     "UID": "urn:veeam:BackupJobSession:514a5930-5390-4811-b4a8-1d67004f39e7",
                     "Links": [
                         {
@@ -397,13 +397,13 @@ BACKUPS_RESPONSE = {
                 },
                 {
                     'Href': 'http://192.168.16.21:9399/api/repositories/23e3b941-afa3-4dcc-8c4d-a3e0bca80f26',
-                    'Name': 'WAV_ISANDO_VM_PROXY_NODE2',
+                    'Name': 'WAV_ZAND_VM_PROXY_NODE2',
                     'Rel': 'Up',
                     'Type': 'RepositoryReference'
                 },
                 {
                     'Href': 'http://192.168.16.21:9399/api/backups/5f12200b-3c56-460f-bbd7-fd693e2dcb0e?format=Entity',
-                    'Name': 'KEL00003_KLR_Mail_Server',
+                    'Name': 'KL00003_KR_Mail_Server',
                     'Rel': 'Alternate',
                     'Type': 'Backup'
                 },
@@ -418,7 +418,7 @@ BACKUPS_RESPONSE = {
                     'Type': 'BackupFileReferenceList'
                 }
             ],
-           'Name': 'KEL00003_KLR_Mail_Server',
+           'Name': 'KL00003_KR_Mail_Server',
            'Type': 'BackupReference',
            'UID': 'urn:veeam:Backup:5f12200b-3c56-460f-bbd7-fd693e2dcb0e'
         },
@@ -439,7 +439,7 @@ BACKUPS_RESPONSE = {
                 },
                 {
                     'Href': 'http://192.168.16.21:9399/api/backups/b7cf2527-2447-4a1b-8992-ff57b1c7c95b?format=Entity',
-                    'Name': 'Radius-backup',
+                    'Name': 'Rad-backup',
                     'Rel': 'Alternate',
                     'Type': 'Backup'
                 },
@@ -454,7 +454,7 @@ BACKUPS_RESPONSE = {
                     'Type': 'BackupFileReferenceList'
                 }
             ],
-           'Name': 'Radius-backup',
+           'Name': 'Rad-backup',
            'Type': 'BackupReference',
            'UID': 'urn:veeam:Backup:b7cf2527-2447-4a1b-8992-ff57b1c7c95b'
         }
@@ -469,14 +469,14 @@ SUCCESSFUL_JOBS_RESPONSE = {
                 {
                     "IsRetry": True,
                     "JobUid": "urn:veeam:Job:dec7aae1-2124-43dc-a599-d6da0d724201",
-                    "JobName": "Vrfpoller Servers ECS_Ter",
+                    "JobName": "POL Servers ECS_Ter",
                     "JobType": "Backup",
                     "CreationTimeUTC": "2019-07-01T06:36:58Z",
                     "EndTimeUTC": "2019-07-01T06:39:19Z",
                     "State": "Stopped",
                     "Result": "Success",
                     "Progress": 100,
-                    "Name": "Vrfpoller Servers ECS_Ter@2019-07-01 06:36:58",
+                    "Name": "POL Servers ECS_Ter@2019-07-01 06:36:58",
                     "UID": "urn:veeam:BackupJobSession:758b4561-fada-4742-ad4b-2121c341b5da",
                     "Links": [
                         {
@@ -488,13 +488,13 @@ SUCCESSFUL_JOBS_RESPONSE = {
                         {
                             "Rel": "Up",
                             "Href": "http://192.168.16.21:9399/api/jobs/dec7aae1-2124-43dc-a599-d6da0d724201",
-                            "Name": "Vrfpoller Servers ECS_Ter",
+                            "Name": "POL Servers ECS_Ter",
                             "Type": "JobReference"
                         },
                         {
                             "Rel": "Alternate",
                             "Href": "http://192.168.16.21:9399/api/backupSessions/758b4561-fada-4742-ad4b-2121c341b5da",
-                            "Name": "Vrfpoller Servers ECS_Ter@2019-07-01 06:36:58",
+                            "Name": "POL Servers ECS_Ter@2019-07-01 06:36:58",
                             "Type": "BackupJobSessionReference"
                         },
                         {
@@ -551,6 +551,502 @@ EMPTY_SUCCESSFUL_JOBS_RESPONSE = {
         "PageSize": 100,
         "PagesCount": 1
     }
+}
+
+JOBS_RESPONSE = JOBS_JSON = {
+    "Refs": [
+        {
+            "Links": [
+                {
+                    "Rel": "Up",
+                    "Href": "http://192.168.16.21:9399/api/backupServers/62f06091-56a7-4aa3-bf4a-f2df501b8fd9",
+                    "Name": "192.168.16.21",
+                    "Type": "BackupServerReference"
+                },
+                {
+                    "Rel": "Alternate",
+                    "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759?format=Entity",
+                    "Name": "Ven-CC-Basic_750GB",
+                    "Type": "Job"
+                },
+                {
+                    "Rel": "Down",
+                    "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759/backupSessions",
+                    "Type": "BackupJobSessionReferenceList"
+                }
+            ],
+            "UID": "urn:veeam:Job:9be68a1c-7893-4c92-93e9-043be7533759",
+            "Name": "Ven-CC-Basic_750GB",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759",
+            "Type": "JobReference"
+        },
+    ]
+}
+
+SINGLE_JOB_ENTITY_RESPONSE = {
+    "JobType": "Backup",
+    "Platform": "VMware",
+    "Description": "Created by VEEAM\\Administrator at 2/23/2017 1:06 PM.",
+    "ScheduleConfigured": True,
+    "ScheduleEnabled": True,
+    "NextRun": "2019-07-18T19:15:00Z",
+    "JobScheduleOptions": {
+        "Standart": {
+            "RetryOptions": {
+                "RetryTimes": 3,
+                "RetryTimeout": 10,
+                "RetrySpecified1": True
+            },
+            "WaitForBackupCompletion": True,
+            "BackupCompetitionWaitingPeriodMin": 180,
+            "OptionsDaily": {
+                "Kind": "Everyday",
+                "Days": [
+                    "Sunday",
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday"
+                ],
+                "Time": "2017-02-23T19:15:00Z",
+                "TimeOffsetUtc": 2,
+                "Enabled": True
+            },
+            "OptionsMonthly": {
+                "Time": "2017-02-23T20:00:00Z",
+                "TimeOffsetUtc": 2,
+                "DayNumberInMonth": "Fourth",
+                "DayOfWeek": "Saturday",
+                "Months": [
+                    "January",
+                    "February",
+                    "March",
+                    "April",
+                    "May",
+                    "June",
+                    "July",
+                    "August",
+                    "September",
+                    "October",
+                    "November",
+                    "December"
+                ],
+                "DayOfMonth": 1,
+                "Enabled": False
+            },
+            "OptionsPeriodically": {
+                "Kind": "Hours",
+                "FullPeriod": 1,
+                "Schedule": {
+                    "Days": [
+                        {
+                            "Name": "Sunday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Monday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Tuesday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Wednesday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Thursday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Friday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Saturday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        }
+                    ]
+                },
+                "Enabled": False
+            },
+            "OptionsContinuous": {
+                "Schedule": {
+                    "Days": [
+                        {
+                            "Name": "Sunday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Monday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Tuesday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Wednesday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Thursday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Friday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Saturday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        }
+                    ]
+                },
+                "Enabled": False
+            },
+            "OptionsBackupWindow": {
+                "TimePeriods": {
+                    "Days": [
+                        {
+                            "Name": "Sunday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Monday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Tuesday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Wednesday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Thursday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Friday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        },
+                        {
+                            "Name": "Saturday",
+                            "Value": "1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1"
+                        }
+                    ]
+                },
+                "Enabled": False
+            },
+            "OptionsDaisyChaining": {
+                "PreviousJobUid": "",
+                "Enabled": False
+            }
+        }
+    },
+    "JobInfo": {
+        "BackupJobInfo": {
+            "Includes": {
+                "ObjectInJobs": [
+                    {
+                        "ObjectInJobId": "7a843376-4e13-406f-8160-22d71231a62a",
+                        "HierarchyObjRef": "urn:VMware:Vm:eac40d0d-ddfc-4ee4-a445-72389cf53630.vm-48012",
+                        "Name": "FXV DMZ Server (d399550d-a73a-4f6f-8d73-673f45c2be2a)",
+                        "DisplayName": "FXV DMZ Server (d399550d-a73a-4f6f-8d73-673f45c2be2a)",
+                        "Order": 0,
+                        "GuestProcessingOptions": {
+                            "VssSnapshotOptions": {
+                                "VssSnapshotMode": "RequireSuccess",
+                                "IsCopyOnly": False
+                            },
+                            "WindowsGuestFSIndexingOptions": {
+                                "FileSystemIndexingMode": "ExceptSpecifiedFolders",
+                                "IncludedIndexingFolders": [],
+                                "ExcludedIndexingFolders": [
+                                    "%windir%",
+                                    "%ProgramFiles%",
+                                    "%ProgramFiles(x86)%",
+                                    "%ProgramW6432%",
+                                    "%TEMP%"
+                                ]
+                            },
+                            "LinuxGuestFSIndexingOptions": {
+                                "FileSystemIndexingMode": "ExceptSpecifiedFolders",
+                                "IncludedIndexingFolders": [],
+                                "ExcludedIndexingFolders": [
+                                    "/cdrom",
+                                    "/dev",
+                                    "/media",
+                                    "/mnt",
+                                    "/proc",
+                                    "/tmp",
+                                    "/lost+found"
+                                ]
+                            },
+                            "SqlBackupOptions": {
+                                "TransactionLogsProcessing": "OnlyOnSuccessJob",
+                                "BackupLogsFrequencyMin": 15,
+                                "UseDbBackupRetention": True,
+                                "RetainDays": 15
+                            },
+                            "WindowsCredentialsId": "",
+                            "LinuxCredentialsId": ""
+                        },
+                        "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759/includes/7a843376-4e13-406f-8160-22d71231a62a",
+                        "Type": "ObjectInJob"
+                    },
+                    {
+                        "ObjectInJobId": "3bd81ff0-a03b-4113-85cc-bec853faee82",
+                        "HierarchyObjRef": "urn:VMware:Vm:eac40d0d-ddfc-4ee4-a445-72389cf53630.vm-48013",
+                        "Name": "FXV SQL SERVER (abd1f7d9-85b6-4621-81c1-cacb5c8f5a98)",
+                        "DisplayName": "FXV SQL SERVER (abd1f7d9-85b6-4621-81c1-cacb5c8f5a98)",
+                        "Order": 1,
+                        "GuestProcessingOptions": {
+                            "VssSnapshotOptions": {
+                                "VssSnapshotMode": "RequireSuccess",
+                                "IsCopyOnly": False
+                            },
+                            "WindowsGuestFSIndexingOptions": {
+                                "FileSystemIndexingMode": "ExceptSpecifiedFolders",
+                                "IncludedIndexingFolders": [],
+                                "ExcludedIndexingFolders": [
+                                    "%windir%",
+                                    "%ProgramFiles%",
+                                    "%ProgramFiles(x86)%",
+                                    "%ProgramW6432%",
+                                    "%TEMP%"
+                                ]
+                            },
+                            "LinuxGuestFSIndexingOptions": {
+                                "FileSystemIndexingMode": "ExceptSpecifiedFolders",
+                                "IncludedIndexingFolders": [],
+                                "ExcludedIndexingFolders": [
+                                    "/cdrom",
+                                    "/dev",
+                                    "/media",
+                                    "/mnt",
+                                    "/proc",
+                                    "/tmp",
+                                    "/lost+found"
+                                ]
+                            },
+                            "SqlBackupOptions": {
+                                "TransactionLogsProcessing": "OnlyOnSuccessJob",
+                                "BackupLogsFrequencyMin": 15,
+                                "UseDbBackupRetention": True,
+                                "RetainDays": 15
+                            },
+                            "WindowsCredentialsId": "",
+                            "LinuxCredentialsId": ""
+                        },
+                        "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759/includes/3bd81ff0-a03b-4113-85cc-bec853faee82",
+                        "Type": "ObjectInJob"
+                    },
+                    {
+                        "ObjectInJobId": "35ba6fd0-399d-4737-96a3-9afcc76a90dd",
+                        "HierarchyObjRef": "urn:VMware:Vm:eac40d0d-ddfc-4ee4-a445-72389cf53630.vm-48015",
+                        "Name": "FXV UTILITY SERVER (521ace3a-9a45-4b5f-9569-ed3cdafe8eb3)",
+                        "DisplayName": "FXV UTILITY SERVER (521ace3a-9a45-4b5f-9569-ed3cdafe8eb3)",
+                        "Order": 2,
+                        "GuestProcessingOptions": {
+                            "VssSnapshotOptions": {
+                                "VssSnapshotMode": "RequireSuccess",
+                                "IsCopyOnly": False
+                            },
+                            "WindowsGuestFSIndexingOptions": {
+                                "FileSystemIndexingMode": "ExceptSpecifiedFolders",
+                                "IncludedIndexingFolders": [],
+                                "ExcludedIndexingFolders": [
+                                    "%windir%",
+                                    "%ProgramFiles%",
+                                    "%ProgramFiles(x86)%",
+                                    "%ProgramW6432%",
+                                    "%TEMP%"
+                                ]
+                            },
+                            "LinuxGuestFSIndexingOptions": {
+                                "FileSystemIndexingMode": "ExceptSpecifiedFolders",
+                                "IncludedIndexingFolders": [],
+                                "ExcludedIndexingFolders": [
+                                    "/cdrom",
+                                    "/dev",
+                                    "/media",
+                                    "/mnt",
+                                    "/proc",
+                                    "/tmp",
+                                    "/lost+found"
+                                ]
+                            },
+                            "SqlBackupOptions": {
+                                "TransactionLogsProcessing": "OnlyOnSuccessJob",
+                                "BackupLogsFrequencyMin": 15,
+                                "UseDbBackupRetention": True,
+                                "RetainDays": 15
+                            },
+                            "WindowsCredentialsId": "",
+                            "LinuxCredentialsId": ""
+                        },
+                        "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759/includes/35ba6fd0-399d-4737-96a3-9afcc76a90dd",
+                        "Type": "ObjectInJob"
+                    },
+                    {
+                        "ObjectInJobId": "f22ff046-0e79-4ddb-b4d1-b5035668d31b",
+                        "HierarchyObjRef": "urn:VMware:Vm:eac40d0d-ddfc-4ee4-a445-72389cf53630.vm-45351",
+                        "Name": "FXV_APS_SERVER (755e8fc6-7152-4742-bf16-b0a64c101335)",
+                        "DisplayName": "FXV_APS_SERVER (755e8fc6-7152-4742-bf16-b0a64c101335)",
+                        "Order": 3,
+                        "GuestProcessingOptions": {
+                            "VssSnapshotOptions": {
+                                "VssSnapshotMode": "RequireSuccess",
+                                "IsCopyOnly": False
+                            },
+                            "WindowsGuestFSIndexingOptions": {
+                                "FileSystemIndexingMode": "ExceptSpecifiedFolders",
+                                "IncludedIndexingFolders": [],
+                                "ExcludedIndexingFolders": [
+                                    "%windir%",
+                                    "%ProgramFiles%",
+                                    "%ProgramFiles(x86)%",
+                                    "%ProgramW6432%",
+                                    "%TEMP%"
+                                ]
+                            },
+                            "LinuxGuestFSIndexingOptions": {
+                                "FileSystemIndexingMode": "ExceptSpecifiedFolders",
+                                "IncludedIndexingFolders": [],
+                                "ExcludedIndexingFolders": [
+                                    "/cdrom",
+                                    "/dev",
+                                    "/media",
+                                    "/mnt",
+                                    "/proc",
+                                    "/tmp",
+                                    "/lost+found"
+                                ]
+                            },
+                            "SqlBackupOptions": {
+                                "TransactionLogsProcessing": "OnlyOnSuccessJob",
+                                "BackupLogsFrequencyMin": 15,
+                                "UseDbBackupRetention": True,
+                                "RetainDays": 15
+                            },
+                            "WindowsCredentialsId": "",
+                            "LinuxCredentialsId": ""
+                        },
+                        "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759/includes/f22ff046-0e79-4ddb-b4d1-b5035668d31b",
+                        "Type": "ObjectInJob"
+                    }
+                ]
+            },
+            "GuestProcessingOptions": {
+                "VssSnapshotOptions": {
+                    "VssSnapshotMode": "Disabled",
+                    "IsCopyOnly": False
+                },
+                "WindowsGuestFSIndexingOptions": {
+                    "FileSystemIndexingMode": "Disabled",
+                    "IncludedIndexingFolders": [],
+                    "ExcludedIndexingFolders": []
+                },
+                "LinuxGuestFSIndexingOptions": {
+                    "FileSystemIndexingMode": "Disabled",
+                    "IncludedIndexingFolders": [],
+                    "ExcludedIndexingFolders": []
+                },
+                "SqlBackupOptions": {
+                    "TransactionLogsProcessing": "OnlyOnSuccessJob",
+                    "BackupLogsFrequencyMin": 15,
+                    "UseDbBackupRetention": True,
+                    "RetainDays": 15
+                },
+                "WindowsCredentialsId": "",
+                "LinuxCredentialsId": ""
+            },
+            "AdvancedStorageOptions": {
+                "PasswordKeyId": ""
+            }
+        }
+    },
+    "Name": "Ven-CC-Basic_750GB",
+    "UID": "urn:veeam:Job:9be68a1c-7893-4c92-93e9-043be7533759",
+    "Links": [
+        {
+            "Rel": "Up",
+            "Href": "http://192.168.16.21:9399/api/backupServers/62f06091-56a7-4aa3-bf4a-f2df501b8fd9",
+            "Name": "192.168.16.21",
+            "Type": "BackupServerReference"
+        },
+        {
+            "Rel": "Alternate",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759",
+            "Name": "Ven-CC-Basic_750GB",
+            "Type": "JobReference"
+        },
+        {
+            "Rel": "Edit",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759",
+            "Name": "Ven-CC-Basic_750GB",
+            "Type": "JobReference"
+        },
+        {
+            "Rel": "Clone",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759?action=clone"
+        },
+        {
+            "Rel": "Down",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759/includes",
+            "Type": "ObjectInJobList"
+        },
+        {
+            "Rel": "ToggleScheduleEnabled",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759?action=toggleScheduleEnabled"
+        },
+        {
+            "Rel": "Down",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759/backupSessions",
+            "Type": "BackupJobSessionReferenceList"
+        },
+        {
+            "Rel": "Create",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759/includes",
+            "Type": "ObjectInJob"
+        },
+        {
+            "Rel": "Start",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759?action=start"
+        },
+        {
+            "Rel": "Stop",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759?action=stop"
+        },
+        {
+            "Rel": "Retry",
+            "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759?action=retry"
+        }
+    ],
+    "Href": "http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759?format=Entity",
+    "Type": "Job"
+}
+
+JOB_NOT_FOUND_RESPONSE = {
+    "FirstChanceExceptionMessage": None,
+    "Message": "Cannot find job [9be68a1c-7893-4c92-93e9-045be7533759]",
+    "StackTrace": None,
+    "Status": None,
+    "StatusCode": 404
+}
+
+INVALID_UUID_JOB = {
+    'FirstChanceExceptionMessage': None,
+    'Message': ' ID 99999 is invalid. Type: Job',
+    'StackTrace': None,
+    'Status': None,
+    'StatusCode': 400
 }
 
 BACKUP_SESSION_RESPONSE = {
@@ -809,7 +1305,7 @@ class VeeamClientTestCase(TestCase):
         )
         responses.add(
             responses.GET,
-            f'{ self.BASE_API_URL }/query?type=BackupJobSession&format=entities&filter=jobname==%22Vrfpoller%20Servers%20ECS_Ter%22;(result==%22Success%22,result==%22Warning%22);creationtime%3E%222019-07-01T04:00:16Z%22',
+            f'{ self.BASE_API_URL }/query?type=BackupJobSession&format=entities&filter=jobname==%22POL%20Servers%20ECS_Ter%22;(result==%22Success%22,result==%22Warning%22);creationtime%3E%222019-07-01T04:00:16Z%22',
             json=EMPTY_SUCCESSFUL_JOBS_RESPONSE,
             status=200
         )
@@ -821,7 +1317,7 @@ class VeeamClientTestCase(TestCase):
             persistently_failed_jobs,
             [
                 {
-                    'IsRetry': False, 'JobUid': 'urn:veeam:Job:dec7aae1-2124-43dc-a599-d6da0d724201', 'JobName': 'Vrfpoller Servers ECS_Ter', 'JobType': 'Backup', 'CreationTimeUTC': '2019-07-01T04:00:16Z', 'EndTimeUTC': '2019-07-01T06:26:56Z', 'State': 'Stopped', 'Result': 'Failed', 'Progress': 100, 'Name': 'Vrfpoller Servers ECS_Ter@2019-07-01 04:00:16', 'UID': 'urn:veeam:BackupJobSession:514a5930-5390-4811-b4a8-1d67004f39e7', 'Links': [{'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/backupServers/62f06091-56a7-4aa3-bf4a-f2df501b8fd9', 'Name': '192.168.16.21', 'Type': 'BackupServerReference'}], 'Href': 'http://192.168.16.21:9399/api/backupSessions/514a5930-5390-4811-b4a8-1d67004f39e7?format=Entity', 'Type': 'BackupJobSession', 'message_type': 'job_failed'
+                    'IsRetry': False, 'JobUid': 'urn:veeam:Job:dec7aae1-2124-43dc-a599-d6da0d724201', 'JobName': 'POL Servers ECS_Ter', 'JobType': 'Backup', 'CreationTimeUTC': '2019-07-01T04:00:16Z', 'EndTimeUTC': '2019-07-01T06:26:56Z', 'State': 'Stopped', 'Result': 'Failed', 'Progress': 100, 'Name': 'POL Servers ECS_Ter@2019-07-01 04:00:16', 'UID': 'urn:veeam:BackupJobSession:514a5930-5390-4811-b4a8-1d67004f39e7', 'Links': [{'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/backupServers/62f06091-56a7-4aa3-bf4a-f2df501b8fd9', 'Name': '192.168.16.21', 'Type': 'BackupServerReference'}], 'Href': 'http://192.168.16.21:9399/api/backupSessions/514a5930-5390-4811-b4a8-1d67004f39e7?format=Entity', 'Type': 'BackupJobSession', 'message_type': 'job_failed'
                 }
             ]
         )
@@ -846,7 +1342,7 @@ class VeeamClientTestCase(TestCase):
         )
         responses.add(
             responses.GET,
-            f'{ self.BASE_API_URL }/query?type=BackupJobSession&format=entities&filter=jobname==%22Vrfpoller%20Servers%20ECS_Ter%22;(result==%22Success%22,result==%22Warning%22);creationtime%3E%222019-07-01T04:00:16Z%22',
+            f'{ self.BASE_API_URL }/query?type=BackupJobSession&format=entities&filter=jobname==%22POL%20Servers%20ECS_Ter%22;(result==%22Success%22,result==%22Warning%22);creationtime%3E%222019-07-01T04:00:16Z%22',
             json=SUCCESSFUL_JOBS_RESPONSE,
             status=200
         )
@@ -885,6 +1381,110 @@ class VeeamClientTestCase(TestCase):
         self.assertEqual(
             repos[0]['message_type'],
             'job'
+        )
+
+    @responses.activate
+    def test_get_jobs(self):
+        '''
+        Ensure we can get all jobs
+        '''
+        responses.add(
+            responses.POST, f'{ self.BASE_API_URL }/sessionMngr/?v=v1_4',
+                json={'UserName': 'VEEAM\\veeam.api', 'SessionId': '2fb28f4f-46bd-4855-a757-0b8c24f9826b'},
+                status=201,
+                headers={'X-RestSvcSessionId': 'MMM'}
+        )
+        responses.add(
+            responses.GET,
+            f'{ self.BASE_API_URL }/jobs',
+            json=JOBS_RESPONSE,
+            status=200
+        )
+        
+        client = VeeamClient(self.BASE_API_URL, 'username', 'pass')
+        jobs = client.get_jobs()
+        
+        self.assertEqual(
+            jobs,
+            JOBS_RESPONSE
+        )
+
+    @responses.activate
+    def test_get_job(self):
+        '''
+        Ensure we can get a single job
+        '''
+        responses.add(
+            responses.POST, f'{ self.BASE_API_URL }/sessionMngr/?v=v1_4',
+                json={'UserName': 'VEEAM\\veeam.api', 'SessionId': '2fb28f4f-46bd-4855-a757-0b8c24f9826b'},
+                status=201,
+                headers={'X-RestSvcSessionId': 'MMM'}
+        )
+        responses.add(
+            responses.GET,
+            f'{ self.BASE_API_URL }/job/9be68a1c-7893-4c92-93e9-043be7533759?format=Entity',
+            json=SINGLE_JOB_ENTITY_RESPONSE,
+            status=200
+        )
+        
+        client = VeeamClient(self.BASE_API_URL, 'username', 'pass')
+        jobs = client.get_job('9be68a1c-7893-4c92-93e9-043be7533759')
+        
+        self.assertEqual(
+            jobs,
+            SINGLE_JOB_ENTITY_RESPONSE
+        )
+
+    @responses.activate
+    def test_get_job_404(self):
+        '''
+        Ensure the response 404's if the job does not exist
+        '''
+        responses.add(
+            responses.POST, f'{ self.BASE_API_URL }/sessionMngr/?v=v1_4',
+                json={'UserName': 'VEEAM\\veeam.api', 'SessionId': '2fb28f4f-46bd-4855-a757-0b8c24f9826b'},
+                status=201,
+                headers={'X-RestSvcSessionId': 'MMM'}
+        )
+        responses.add(
+            responses.GET,
+            f'{ self.BASE_API_URL }/job/9be68a1c-7893-4c92-93e9-053be7533759?format=Entity',
+            json=JOB_NOT_FOUND_RESPONSE,
+            status=404
+        )
+        
+        client = VeeamClient(self.BASE_API_URL, 'username', 'pass')
+        job = client.get_job('9be68a1c-7893-4c92-93e9-053be7533759')
+        
+        self.assertEqual(
+            job,
+            JOB_NOT_FOUND_RESPONSE
+        )
+
+    @responses.activate
+    def test_get_job_400(self):
+        '''
+        Ensure the response 400's if the job uuid is not valid
+        '''
+        responses.add(
+            responses.POST, f'{ self.BASE_API_URL }/sessionMngr/?v=v1_4',
+                json={'UserName': 'VEEAM\\veeam.api', 'SessionId': '2fb28f4f-46bd-4855-a757-0b8c24f9826b'},
+                status=201,
+                headers={'X-RestSvcSessionId': 'MMM'}
+        )
+        responses.add(
+            responses.GET,
+            f'{ self.BASE_API_URL }/job/12345?format=Entity',
+            json=INVALID_UUID_JOB,
+            status=400
+        )
+        
+        client = VeeamClient(self.BASE_API_URL, 'username', 'pass')
+        job = client.get_job('12345')
+        
+        self.assertEqual(
+            job,
+            INVALID_UUID_JOB
         )
 
     @responses.activate
