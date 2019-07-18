@@ -1422,7 +1422,7 @@ class VeeamClientTestCase(TestCase):
         )
         responses.add(
             responses.GET,
-            f'{ self.BASE_API_URL }/job/9be68a1c-7893-4c92-93e9-043be7533759?format=Entity',
+            f'{ self.BASE_API_URL }/jobs/9be68a1c-7893-4c92-93e9-043be7533759?format=Entity',
             json=SINGLE_JOB_ENTITY_RESPONSE,
             status=200
         )
@@ -1448,7 +1448,7 @@ class VeeamClientTestCase(TestCase):
         )
         responses.add(
             responses.GET,
-            f'{ self.BASE_API_URL }/job/9be68a1c-7893-4c92-93e9-053be7533759?format=Entity',
+            f'{ self.BASE_API_URL }/jobs/9be68a1c-7893-4c92-93e9-053be7533759?format=Entity',
             json=JOB_NOT_FOUND_RESPONSE,
             status=404
         )
@@ -1474,7 +1474,7 @@ class VeeamClientTestCase(TestCase):
         )
         responses.add(
             responses.GET,
-            f'{ self.BASE_API_URL }/job/12345?format=Entity',
+            f'{ self.BASE_API_URL }/jobs/12345?format=Entity',
             json=INVALID_UUID_JOB,
             status=400
         )

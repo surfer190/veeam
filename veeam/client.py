@@ -76,7 +76,7 @@ class VeeamClient(object):
         Returns:
             json -- a python dict of the response
         '''
-        job = self.session.get('{url}/job/{uuid}?format=Entity'.format(
+        job = self.session.get('{url}/jobs/{uuid}?format=Entity'.format(
             url=self.url,
             uuid=uuid
         ))
