@@ -461,7 +461,6 @@ BACKUPS_RESPONSE = {
     ]
 }
 
-
 SUCCESSFUL_JOBS_RESPONSE = {
     "Entities": {
         "BackupJobSessions": {
@@ -551,6 +550,55 @@ EMPTY_SUCCESSFUL_JOBS_RESPONSE = {
         "PageSize": 100,
         "PagesCount": 1
     }
+}
+
+BACKUP_SESSIONS = {
+    'BackupJobSessions': [
+        {
+            'IsRetry': True,
+            'JobUid': 'urn:veeam:Job:9be68a1c-7893-4c92-93e9-043be7533759',
+            'JobName': 'Ven-CC-Basic_750GB',
+            'JobType': 'Backup',
+            'CreationTimeUTC': '2019-02-19T20:10:54Z',
+            'EndTimeUTC': '2019-02-19T20:47:26Z',
+            'State': 'Stopped',
+            'Result': 'Success',
+            'Progress': 100,
+            'Name': 'Ven-CC-Basic_750GB@2019-02-19 20:10:54',
+            'UID': 'urn:veeam:BackupJobSession:90641c91-e4dc-4078-9331-015552fa19a5',
+            'Links': [
+                {'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/backupServers/62f06091-56a7-4aa3-bf4a-f2df501b8fd9', 'Name': '192.168.16.21', 'Type': 'BackupServerReference'},
+                {'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759', 'Name': 'Ven-CC-Basic_750GB', 'Type': 'JobReference'},
+                {'Rel': 'Alternate', 'Href': 'http://192.168.16.21:9399/api/backupSessions/90641c91-e4dc-4078-9331-015552fa19a5', 'Name': 'Ven-CC-Basic_750GB@2019-02-19 20:10:54', 'Type': 'BackupJobSessionReference'},
+                {'Rel': 'Down', 'Href': 'http://192.168.16.21:9399/api/backupSessions/90641c91-e4dc-4078-9331-015552fa19a5/taskSessions', 'Type': 'BackupTaskSessionReferenceList'},
+                {'Rel': 'Stop', 'Href': 'http://192.168.16.21:9399/api/backupSessions/90641c91-e4dc-4078-9331-015552fa19a5?action=stop'}
+            ],
+            'Href': 'http://192.168.16.21:9399/api/backupSessions/90641c91-e4dc-4078-9331-015552fa19a5?format=Entity',
+            'Type': 'BackupJobSession'
+        },
+        {
+            'IsRetry': False,
+            'JobUid': 'urn:veeam:Job:9be68a1c-7893-4c92-93e9-043be7533759',
+            'JobName': 'Ven-CC-Basic_750GB',
+            'JobType': 'Backup',
+            'CreationTimeUTC': '2019-03-04T19:15:22Z',
+            'EndTimeUTC': '2019-03-04T19:43:31Z',
+            'State': 'Stopped',
+            'Result': 'Success',
+            'Progress': 100,
+            'Name': 'Ven-CC-Basic_750GB@2019-03-04 19:15:22',
+            'UID': 'urn:veeam:BackupJobSession:3a0e45a6-0ad3-4a36-9169-0093a2c16326',
+            'Links': [
+                {'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/backupServers/62f06091-56a7-4aa3-bf4a-f2df501b8fd9', 'Name': '192.168.16.21', 'Type': 'BackupServerReference'},
+                {'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759', 'Name': 'Ven-CC-Basic_750GB', 'Type': 'JobReference'},
+                {'Rel': 'Alternate', 'Href': 'http://192.168.16.21:9399/api/backupSessions/3a0e45a6-0ad3-4a36-9169-0093a2c16326', 'Name': 'Ven-CC-Basic_750GB@2019-03-04 19:15:22', 'Type': 'BackupJobSessionReference'},
+                {'Rel': 'Down', 'Href': 'http://192.168.16.21:9399/api/backupSessions/3a0e45a6-0ad3-4a36-9169-0093a2c16326/taskSessions', 'Type': 'BackupTaskSessionReferenceList'},
+                {'Rel': 'Stop', 'Href': 'http://192.168.16.21:9399/api/backupSessions/3a0e45a6-0ad3-4a36-9169-0093a2c16326?action=stop'}
+            ],
+            'Href': 'http://192.168.16.21:9399/api/backupSessions/3a0e45a6-0ad3-4a36-9169-0093a2c16326?format=Entity',
+            'Type': 'BackupJobSession'
+        }
+    ]
 }
 
 JOBS_RESPONSE = JOBS_JSON = {
@@ -1047,6 +1095,41 @@ INVALID_UUID_JOB = {
     'StackTrace': None,
     'Status': None,
     'StatusCode': 400
+}
+
+EXPECTED_BACKUP_SESSION_RESPONSE = {
+    'BackupJobSessions': [
+        {
+            'IsRetry': False,
+            'JobUid': 'urn:veeam:Job:9be68a1c-7893-4c92-93e9-043be7533759',
+            'JobName': 'Ven-CC-Basic_750GB',
+            'JobType': 'Backup',
+            'CreationTimeUTC': '2019-03-04T19:15:22Z',
+            'EndTimeUTC': '2019-03-04T19:43:31Z',
+            'State': 'Stopped',
+            'Result': 'Success',
+            'Progress': 100,
+            'Name': 'Ven-CC-Basic_750GB@2019-03-04 19:15:22',
+            'UID': 'urn:veeam:BackupJobSession:3a0e45a6-0ad3-4a36-9169-0093a2c16326',
+            'Links': [{'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/backupServers/62f06091-56a7-4aa3-bf4a-f2df501b8fd9', 'Name': '192.168.16.21', 'Type': 'BackupServerReference'}, {'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759', 'Name': 'Ven-CC-Basic_750GB', 'Type': 'JobReference'}, {'Rel': 'Alternate', 'Href': 'http://192.168.16.21:9399/api/backupSessions/3a0e45a6-0ad3-4a36-9169-0093a2c16326', 'Name': 'Ven-CC-Basic_750GB@2019-03-04 19:15:22', 'Type': 'BackupJobSessionReference'}, {'Rel': 'Down', 'Href': 'http://192.168.16.21:9399/api/backupSessions/3a0e45a6-0ad3-4a36-9169-0093a2c16326/taskSessions', 'Type': 'BackupTaskSessionReferenceList'}, {'Rel': 'Stop', 'Href': 'http://192.168.16.21:9399/api/backupSessions/3a0e45a6-0ad3-4a36-9169-0093a2c16326?action=stop'}],
+            'Href': 'http://192.168.16.21:9399/api/backupSessions/3a0e45a6-0ad3-4a36-9169-0093a2c16326?format=Entity',
+            'Type': 'BackupJobSession'
+        },
+        {
+            'IsRetry': True,
+            'JobUid': 'urn:veeam:Job:9be68a1c-7893-4c92-93e9-043be7533759',
+            'JobName': 'Ven-CC-Basic_750GB',
+            'JobType': 'Backup',
+            'CreationTimeUTC': '2019-02-19T20:10:54Z',
+            'EndTimeUTC': '2019-02-19T20:47:26Z',
+            'State': 'Stopped',
+            'Result': 'Success',
+            'Progress': 100,
+            'Name': 'Ven-CC-Basic_750GB@2019-02-19 20:10:54',
+            'UID': 'urn:veeam:BackupJobSession:90641c91-e4dc-4078-9331-015552fa19a5',
+            'Links': [{'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/backupServers/62f06091-56a7-4aa3-bf4a-f2df501b8fd9', 'Name': '192.168.16.21', 'Type': 'BackupServerReference'}, {'Rel': 'Up', 'Href': 'http://192.168.16.21:9399/api/jobs/9be68a1c-7893-4c92-93e9-043be7533759', 'Name': 'Ven-CC-Basic_750GB', 'Type': 'JobReference'}, {'Rel': 'Alternate', 'Href': 'http://192.168.16.21:9399/api/backupSessions/90641c91-e4dc-4078-9331-015552fa19a5', 'Name': 'Ven-CC-Basic_750GB@2019-02-19 20:10:54', 'Type': 'BackupJobSessionReference'}, {'Rel': 'Down', 'Href': 'http://192.168.16.21:9399/api/backupSessions/90641c91-e4dc-4078-9331-015552fa19a5/taskSessions', 'Type': 'BackupTaskSessionReferenceList'}, {'Rel': 'Stop', 'Href': 'http://192.168.16.21:9399/api/backupSessions/90641c91-e4dc-4078-9331-015552fa19a5?action=stop'}], 'Href': 'http://192.168.16.21:9399/api/backupSessions/90641c91-e4dc-4078-9331-015552fa19a5?format=Entity', 'Type': 'BackupJobSession'
+        }
+    ]
 }
 
 BACKUP_SESSION_RESPONSE = {
@@ -1724,4 +1807,27 @@ class VeeamClientTestCase(TestCase):
         
         assert vms_processed_day == SUMMARY_VM_RESPONSE
 
+    @responses.activate
+    def test_get_backup_sessions(self):
+        '''
+        Ensure backup sessions for a specific job are acquired
+        '''
+        responses.add(
+            responses.POST, f'{ self.BASE_API_URL }/sessionMngr/?v=v1_4',
+                json={'UserName': 'VEEAM\\veeam.api', 'SessionId': '2fb28f4f-46bd-4855-a757-0b8c24f9826b'},
+                status=201,
+                headers={'X-RestSvcSessionId': 'MMM'}
+        )
+        responses.add(
+            responses.GET,
+            f'{ self.BASE_API_URL }/jobs/9be68a1c-7893-4c92-93e9-043be7533759/backupSessions?format=Entity',
+            json=BACKUP_SESSIONS,
+            status=200
+        )
+        #response = client.session.get('{}/jobs/9be68a1c-7893-4c92-93e9-043be7533759/backupSessions?format=Entity'.format(client.url))
+        client = VeeamClient(self.BASE_API_URL, 'username', 'pass')
+        backup_sessions = client.get_backup_sessions('9be68a1c-7893-4c92-93e9-043be7533759')
+        
+        assert backup_sessions == EXPECTED_BACKUP_SESSION_RESPONSE
+        
 # TODO: Test to ensure the paramter is a uuid, otherwise raise an error

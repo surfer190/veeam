@@ -257,6 +257,35 @@ class VeeamClient(object):
             repo_list.append(period)
         
         return repo_list
+    
+    def get_backup_sessions(self, job_uuid):
+        '''
+        Get all the backup sessions
+        Order them by creation date
+        
+        Arguments:
+            job_uuid {uuid}
+        '''
+        backup_sessions = self.session.get(
+            '{url}/jobs/{uuid}/backupSessions?format=Entity'.format(
+                url=self.url,
+                uuid=job_uuid
+            )
+        )
+        backup_sessions_json = backup_sessions.json()
+        
+        backup_sessions = backup_sessions_json['BackupJobSessions']
+        
+        # order by created date
+        backup_sessions = sorted(
+            backup_sessions,
+            key = lambda i: i['CreationTimeUTC'],
+            reverse=True
+        )
+        
+        result = {'BackupJobSessions': backup_sessions}
+        
+        return result
 
     def logout(self):
         '''
